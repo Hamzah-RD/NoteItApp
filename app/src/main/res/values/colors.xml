@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Dark_primary_color">#0288d1</color>
+    <color name="Light_primary_color">#b3e5fc</color>
+    <color name="Primary_color">#03a9f4</color>
+    <color name="Text_Icons">#FFFFFF</color>
+    <color name="Accent_color">#ffc107</color>
+    <color name="Primary_text">#212121</color>
+    <color name="Secondary_text">#757575</color>
+    <color name="Divider_color">#BDBDBD</color>
+    <color name="HintTextColor">#7B7B7B</color>
+    <color name="ColorNoteColor1">#a9d675</color>
+    <color name="ColorNoteColor2">#ea7c54</color>
+    <color name="ColorNoteColor3">#f6ecc9</color>
+    <color name="ColorNoteColor4">#cdeff1</color>
+    <color name="ColorNoteColor5">#FF5722</color>
+    <color name="ColorNoteColor6">#002DFF</color>
+    <color name="ColorNoteColor7">#00FFA5</color>
+    <color name="bg_color">#3BFFFFFF</color>
+    <color name="bg_color_item">#3B000000</color>
+    <color name="colorDefultNotes">#333333</color>
+</resources>

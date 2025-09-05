@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/bg_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/blod"
+        android:text="@string/title_my_note"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_30sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_search"
+        android:elevation="@dimen/_12sdp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtitle">
+
+        <ImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_search1"
+            app:tint="@color/black" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:includeFontPadding="false"
+
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/regular"
+            android:hint="@string/hint_search"
+            android:textColor="@color/black"
+            android:textColorHint="@color/HintTextColor"
+            android:textSize="@dimen/_12sdp" />
+
+
+    </LinearLayout>
+
+
+    <!-- Fix RecyclerView constraints -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_Note"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_layout" />
+
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/Quick_actionbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        android:background="@drawable/bg_search"-->
+<!--        android:elevation="@dimen/_12sdp"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent">-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/ig_add"-->
+<!--            android:layout_width="@dimen/_25sdp"-->
+<!--            android:layout_height="@dimen/_25sdp"-->
+<!--            android:layout_margin="@dimen/_5sdp"-->
+<!--            android:padding="@dimen/_5sdp"-->
+<!--            android:src="@drawable/ic_add" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/ig_upload"-->
+<!--            android:layout_width="@dimen/_25sdp"-->
+<!--            android:layout_height="@dimen/_25sdp"-->
+<!--            android:layout_margin="@dimen/_5sdp"-->
+<!--            android:padding="@dimen/_5sdp"-->
+<!--            android:src="@drawable/ic_image" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/ig_link"-->
+<!--            android:layout_width="@dimen/_25sdp"-->
+<!--            android:layout_height="@dimen/_25sdp"-->
+<!--            android:layout_margin="@dimen/_5sdp"-->
+<!--            android:padding="@dimen/_5sdp"-->
+<!--            android:src="@drawable/ic_link" />-->
+
+
+<!--    </LinearLayout>-->
+
+
+    <ImageView
+        android:id="@+id/ig_newNote"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg_add"
+        android:elevation="12dp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_sample_add"
+        android:translationZ="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

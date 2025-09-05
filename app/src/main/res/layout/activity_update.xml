@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/bg_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_18sdp" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp">
+
+            <ImageView
+                android:id="@+id/ig_back"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_marginStart="10dp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/back"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ig_save"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/save"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_marginTop="16dp"
+                android:background="@null"
+                android:fontFamily="@font/blod"
+                android:hint="@string/title"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHint="@color/HintTextColor"
+                android:textSize="@dimen/_26ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/ig_save"
+                app:layout_constraintStart_toStartOf="@+id/ig_back"
+                app:layout_constraintTop_toBottomOf="@+id/ig_back" />
+
+
+            <EditText
+                android:id="@+id/et_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_marginStart="30dp"
+                android:background="@null"
+                android:fontFamily="@font/regular"
+                android:hint="@string/note_subtitle"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHint="@color/HintTextColor"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tv_datetime"
+                app:layout_constraintTop_toBottomOf="@+id/tv_datetime" />
+
+            <ImageView
+                android:id="@+id/imageNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_subtitle" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/tv_datetime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/date_time"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@color/HintTextColor"
+                android:fontFamily="@font/regular"
+                app:layout_constraintStart_toStartOf="@+id/et_title"
+                app:layout_constraintTop_toBottomOf="@+id/et_title" />
+
+
+
+
+            <View
+                android:id="@+id/viewinductor"
+                android:layout_width="@dimen/_3sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/bg_inductor"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@+id/tv_datetime"
+                app:layout_constraintTop_toTopOf="@+id/et_subtitle" />
+
+            <EditText
+                android:id="@+id/et_NoteText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="10dp"
+                android:background="@null"
+                android:elevation="@dimen/_12sdp"
+                android:fontFamily="@font/regular"
+                android:gravity="top"
+                android:hint="@string/hint_type_here"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:minHeight="@dimen/_400sdp"
+                android:padding="@dimen/_5sdp"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textColorHint="@color/HintTextColor"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageNote"
+                tools:ignore="RtlCompat" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </ScrollView>
+    <!--    <include layout="@layout/layoutmiscellaneous"/>-->
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

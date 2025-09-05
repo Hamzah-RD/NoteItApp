@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NoteIT</string>
+    <string name="title_my_note">My Note</string>
+    <string name="hint_search">Search</string>
+    <string name="title">Note Title</string>
+    <string name="hint_type_here">Type here...</string>
+    <string name="date_time">Date/Time</string>
+    <string name="note_subtitle">Note SubTitle</string>
+    <string name="Miscellaneous">Miscellaneous</string>
+    <string name="select_color">Select Color</string>
+</resources>

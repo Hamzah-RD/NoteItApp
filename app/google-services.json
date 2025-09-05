@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "318214552940",
+    "project_id": "noteit-c652d",
+    "storage_bucket": "noteit-c652d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318214552940:android:4037a747b6c22622c8c749",
+        "android_client_info": {
+          "package_name": "com.example.noteit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtSqVv9pHZ5H3IXmEq461FaLchlC6JliY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
