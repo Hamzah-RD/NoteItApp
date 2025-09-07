@@ -3,7 +3,10 @@ package com.example.noteit;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -13,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,31 +31,55 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ImageView Add;
     private NotesAdapter notesAdapter;
     RecyclerView recyclerview;
+    EditText search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        Add.findViewById(R.id.ig_newNote);
+        Add=findViewById(R.id.ig_newNote);
         notesAdapter=new NotesAdapter(this);
         recyclerview=findViewById(R.id.recyclerview_Note);
+        search=findViewById(R.id.et_search);
+
         recyclerview.setAdapter(notesAdapter);
-        recyclerview.setLayoutManager(new LinearLayoutManager(this));
+        recyclerview.setLayoutManager(new GridLayoutManager(this,2));
 
         Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,CreateNewNote.class);
+                startActivity(intent);
+            }
+        });
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                notesAdapter.filterList(s.toString());
+
             }
         });
     }
+
+
 
     @Override
     protected void onStart() {
@@ -68,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                      .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                          @Override
                          public void onSuccess(AuthResult authResult) {
-                             Toast.makeText(MainActivity.this,"Checking User",Toast.LENGTH_SHORT);
+                             Toast.makeText(MainActivity.this,"Checking User",Toast.LENGTH_SHORT).show();
                              progressDialog.cancel();
 
                          }
@@ -76,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                      .addOnFailureListener(new OnFailureListener() {
                          @Override
                          public void onFailure(@NonNull Exception e) {
-                             Toast.makeText(MainActivity.this,e.getMessage(),Toast.LENGTH_SHORT);
+                             Toast.makeText(MainActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
                              progressDialog.cancel();
                          }
                      });
@@ -105,14 +133,15 @@ public class MainActivity extends AppCompatActivity {
                        {
                            DocumentSnapshot documentSnapshot=dsList.get(i);
                            NotesModel notesModel=documentSnapshot.toObject(NotesModel.class);
-                           notesAdapter.add(notesModel);
+                            notesAdapter.add(notesModel);
+
                        }
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-
+                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }

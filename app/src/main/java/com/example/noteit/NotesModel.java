@@ -3,10 +3,32 @@ package com.example.noteit;
 public class NotesModel {
     private  String id;
     private String title;
-    private String subtiltel;
+    private String subtitle;
     private String noteText;
     private  String  dateTime;
     private  String uid;
+    private String color;
+
+    public NotesModel(String id, String title, String subtitle, String noteText, String dateTime, String uid, String color) {
+        this.id = id;
+        this.title = title;
+        this.subtitle = subtitle;
+        this.noteText = noteText;
+        this.dateTime = dateTime;
+        this.uid = uid;
+        this.color = "#FFFFFF";
+    }
+
+
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
 
     public void setUid(String uid) {
         this.uid = uid;
@@ -16,14 +38,6 @@ public class NotesModel {
         return uid;
     }
 
-    public NotesModel(String id, String title, String subtiltel, String noteText, String dateTime, String uid) {
-        this.id = id;
-        this.title = title;
-        this.subtiltel = subtiltel;
-        this.noteText = noteText;
-        this.dateTime = dateTime;
-        this.uid = uid;
-    }
 
     public NotesModel() {
     }
@@ -44,12 +58,12 @@ public class NotesModel {
         this.title = title;
     }
 
-    public String getSubtiltel() {
-        return subtiltel;
+    public String getsubtitle() {
+        return subtitle;
     }
 
-    public void setSubtiltel(String subtiltel) {
-        this.subtiltel = subtiltel;
+    public void setsubtitle(String subtitle) {
+        this.subtitle = subtitle;
     }
 
     public String getNoteText() {

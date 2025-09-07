@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@color/bg_color"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CreateNewNote">
@@ -162,5 +162,5 @@
 
 
     </ScrollView>
-<!--    <include layout="@layout/layoutmiscellaneous"/>-->
+  <include layout="@layout/layoutmiscellaneous"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

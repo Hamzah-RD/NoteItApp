@@ -19,6 +19,6 @@
     <color name="ColorNoteColor6">#002DFF</color>
     <color name="ColorNoteColor7">#00FFA5</color>
     <color name="bg_color">#3BFFFFFF</color>
-    <color name="bg_color_item">#3B000000</color>
+    <color name="bg_color_item">#F2F2F2</color>
     <color name="colorDefultNotes">#333333</color>
 </resources>
