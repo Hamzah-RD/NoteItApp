@@ -19,6 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.noteit.databinding.ActivityCreateNewNoteBinding;
 import com.example.noteit.databinding.ActivityMainBinding;
@@ -29,6 +30,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -51,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         search=findViewById(R.id.et_search);
 
         recyclerview.setAdapter(notesAdapter);
-        recyclerview.setLayoutManager(new GridLayoutManager(this,2));
-
+      //  recyclerview.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerview.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseFirestore.getInstance()
                 .collection("notes")
                 .whereEqualTo("uid",FirebaseAuth.getInstance().getUid())
+                .orderBy("dateTime", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override

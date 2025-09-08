@@ -49,6 +49,14 @@ import java.util.UUID;
             delete=findViewById(R.id.ig_delete);
             initializeViews();
             initMiscellaneous();
+            selectedNoteColor = getIntent().getStringExtra("color");
+            if (selectedNoteColor == null || selectedNoteColor.isEmpty()) {
+                selectedNoteColor = "#333333"; // default color
+            }
+
+            // Rest of your onCreate code...
+            setSubtitleIndicatorColor();
+
             dateTime.setText(getCurrentDateTime());
             // Get data from intent
             Intent intent = getIntent();
@@ -117,8 +125,12 @@ import java.util.UUID;
             String noteTextStr = noteText.getText().toString().trim();
             String datetimeStr = dateTime.getText().toString().trim();
 
+            if (titleStr.isEmpty() && subtitleStr.isEmpty()) {
+                Toast.makeText(UpdateActivity.this, "Please enter at least a title or subtitle", Toast.LENGTH_SHORT).show();
+                return;
+            }
             NotesModel notesModel = new NotesModel(
-                    id, titleStr, subtitleStr, noteTextStr, datetimeStr, firebaseAuth.getUid(),getIntent().getStringExtra("color"));
+                    id, titleStr, subtitleStr, noteTextStr, datetimeStr, firebaseAuth.getUid(),selectedNoteColor);
 
             FirebaseFirestore firestore = FirebaseFirestore.getInstance();
             ProgressDialog progressDialog = new ProgressDialog(this);

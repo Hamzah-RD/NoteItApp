@@ -16,7 +16,7 @@ public class NotesModel {
         this.noteText = noteText;
         this.dateTime = dateTime;
         this.uid = uid;
-        this.color = "#FFFFFF";
+        this.color = color;
     }
 
 

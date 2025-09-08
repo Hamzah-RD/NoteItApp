@@ -81,16 +81,21 @@ public class NotesAdapter  extends RecyclerView.Adapter<NotesAdapter.viewHolder>
        NotesModel notesModel= notesModelList.get(position);
         holder.title.setText(notesModel.getTitle());
         holder.subtile.setText(notesModel.getsubtitle());
+        holder.noteText.setText(notesModel.getNoteText());
         String noteColor = notesModel.getColor();
         if (noteColor != null && !noteColor.isEmpty()) {
             try {
-                GradientDrawable gradientDrawable = (GradientDrawable) holder.layoutNotes.getBackground();
+                GradientDrawable gradientDrawable = new GradientDrawable();
+                gradientDrawable.setShape(GradientDrawable.RECTANGLE);
+                gradientDrawable.setCornerRadius(20f);
                 gradientDrawable.setColor(Color.parseColor(noteColor));
+                holder.layoutNotes.setBackground(gradientDrawable);
+
             } catch (Exception e) {
-                holder.layoutNotes.setBackgroundColor(Color.WHITE);
+                holder.layoutNotes.setBackgroundColor(Color.parseColor(noteColor));
             }
         } else {
-            holder.layoutNotes.setBackgroundColor(Color.WHITE);
+            holder.layoutNotes.setBackgroundResource(R.drawable.bg_item_container);
         }
 
 
@@ -117,12 +122,13 @@ public class NotesAdapter  extends RecyclerView.Adapter<NotesAdapter.viewHolder>
     }
 
     public  class viewHolder extends RecyclerView.ViewHolder {
-        private TextView title,subtile;
+        private TextView title,subtile,noteText;
         private LinearLayout layoutNotes;
         public viewHolder(@NonNull View itemView) {
             super(itemView);
             title=itemView.findViewById(R.id.tvtitle);
             subtile=itemView.findViewById(R.id.tvsubtitle);
+            noteText=itemView.findViewById(R.id.tvnoteText);
             layoutNotes=itemView.findViewById(R.id.layoutNotes);
 
         }

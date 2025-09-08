@@ -64,6 +64,11 @@ public class CreateNewNote extends AppCompatActivity {
         String subtitleStr = subtitle.getText().toString();
         String noteTextStr = noteText.getText().toString();
         String datetimeStr = dateTime.getText().toString();
+
+        if (titleStr.isEmpty() && subtitleStr.isEmpty()) {
+            Toast.makeText(CreateNewNote.this, "Please enter at least a title or subtitle", Toast.LENGTH_SHORT).show();
+            return;
+        }
         NotesModel notesModel = new NotesModel(notesId, titleStr, subtitleStr, noteTextStr, datetimeStr, firebaseAuth.getUid(), selectedNoteColor);
 
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
