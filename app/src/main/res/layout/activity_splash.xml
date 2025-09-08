@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_anchorGravity="center_horizontal"
+    tools:context=".SplashActivity">
+
+    <ImageView
+        android:id="@+id/splashIcon"
+        android:elevation="@dimen/_12sdp"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:background="@drawable/bg_splash_icon"
+        android:padding="@dimen/_20sdp"
+        android:src="@drawable/notepad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/blod"
+        android:text="@string/welcome_to_note_it"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/splashIcon"
+        app:layout_constraintStart_toStartOf="@+id/splashIcon"
+        app:layout_constraintTop_toBottomOf="@+id/splashIcon" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvtitle"
+        app:layout_constraintStart_toStartOf="@+id/tvtitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvtitle"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="hello_world.json"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loadig"
+        tools:ignore="MissingClass" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
