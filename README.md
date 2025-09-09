@@ -1,4 +1,4 @@
-📒 NoteIt – Smart Notes App
+##📒 NoteIt – Smart Notes App
 NoteIt is a modern Android note-taking application built with Java and Firebase Firestore. It helps users create, edit, search, and organize notes with colorful backgrounds and timestamps.
 
 🚀 Features
