@@ -8,7 +8,6 @@ public class NotesModel {
     private  String  dateTime;
     private  String uid;
     private String color;
-
     public NotesModel(String id, String title, String subtitle, String noteText, String dateTime, String uid, String color) {
         this.id = id;
         this.title = title;

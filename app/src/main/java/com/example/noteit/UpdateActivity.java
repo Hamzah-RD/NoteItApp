@@ -94,10 +94,6 @@ import java.util.UUID;
                             })
                             .setNegativeButton("No", (dialog, which) -> dialog.dismiss())
                             .show();
-
-
-
-
                 }
             });
 
